@@ -312,8 +312,8 @@ export default function Portfolio() {
             href="#"
             className="font-bold text-lg tracking-tight text-slate-900 flex items-center gap-1.5 group font-mono"
           >
-            <span className="group-hover:text-indigo-600 transition-colors">AJ</span>
-            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 group-hover:scale-125 transition-transform"></div>
+            <span className="group-hover:text-black transition-colors">AJ</span>
+            <div className="w-1.5 h-1.5 rounded-full bg-green-500 group-hover:scale-125 transition-transform"></div>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
             <a href="#about" className="hover:text-slate-900 transition-colors">
