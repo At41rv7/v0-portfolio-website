@@ -613,7 +613,7 @@ export default function Portfolio() {
       <footer className="relative z-10 py-12 text-center text-slate-400 text-sm font-medium border-t border-slate-100/50">
         <p className="tracking-tight">© {new Date().getFullYear()} Atharvsinh Jadav. All rights reserved.</p>
         <p className="mt-2 text-slate-300 text-xs uppercase tracking-widest flex justify-center items-center gap-2 font-mono">
-          Crafted with <Zap size={10} className="text-indigo-400" /> in India
+          Dev From <Zap size={10} className="text-indigo-400" /> India
         </p>
       </footer>
 
