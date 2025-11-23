@@ -296,25 +296,26 @@ export default function Portfolio() {
 
       {/* --- Navbar --- */}
       <nav
-        className={`fixed top-6 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled ? "translate-y-0 px-4" : "translate-y-0 px-6"}`}
+        className={`fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled ? "translate-y-0 px-2 md:px-4" : "translate-y-0 px-4 md:px-6"}`}
       >
         <div
           className={`
-          backdrop-blur-xl border transition-all duration-500 rounded-full flex items-center gap-4 md:gap-8 shadow-sm
+          backdrop-blur-xl border transition-all duration-500 rounded-full flex items-center gap-3 md:gap-10 shadow-sm
           ${
             scrolled
-              ? "bg-white/80 border-slate-200/80 px-5 py-3 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
-              : "bg-white/50 border-transparent px-6 py-4"
+              ? "bg-white/90 border-slate-200/80 px-4 py-2 md:px-6 md:py-3 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+              : "bg-white/80 border-slate-100 px-4 py-2 md:px-7 md:py-3.5"
           }
         `}
         >
-          <a
-            href="#"
-            className="font-bold text-lg tracking-tight text-slate-900 flex items-center gap-1.5 group font-mono"
-          >
-            <span className="group-hover:text-black transition-colors">AJ</span>
-            <div className="w-1.5 h-1.5 rounded-full bg-green-500 group-hover:scale-125 transition-transform"></div>
+          {/* Updated logo to use the provided image and matched header style to the reference pill design */}
+          <a href="#" className="flex items-center gap-1.5 group relative">
+            <div className="relative w-8 h-8 md:w-9 md:h-9 rounded-full overflow-hidden ring-2 ring-white shadow-sm group-hover:scale-105 transition-transform duration-300">
+              <img src="/images/logo.png" alt="Logo" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute bottom-0.5 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white"></div>
           </a>
+
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-500">
             <a href="#about" className="hover:text-slate-900 transition-colors">
               About
@@ -328,7 +329,7 @@ export default function Portfolio() {
           </div>
           <a
             href="#contact"
-            className="px-5 py-2 bg-slate-900 hover:bg-black text-white rounded-full text-xs md:text-sm font-medium transition-all hover:shadow-lg hover:shadow-slate-500/20 active:scale-95 tracking-wide"
+            className="px-4 py-2 md:px-6 md:py-2.5 bg-[#0A0F1C] hover:bg-black text-white rounded-full text-xs md:text-sm font-medium transition-all hover:shadow-lg hover:shadow-slate-900/20 active:scale-95 tracking-wide"
           >
             Let's Talk
           </a>
@@ -336,7 +337,7 @@ export default function Portfolio() {
       </nav>
 
       {/* --- Hero Section --- */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 pt-12 text-center">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 pt-24 md:pt-40 text-center">
         <FadeIn delay={100}>
           <div className="relative mb-10 group cursor-default">
             <div className="absolute inset-0 bg-gradient-to-tr from-indigo-200 via-blue-100 to-purple-100 rounded-full opacity-0 group-hover:opacity-100 transition duration-700 blur-2xl scale-150"></div>
@@ -458,46 +459,48 @@ export default function Portfolio() {
           </p>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-3 md:gap-8">
           {projects.map((project, index) => (
             <FadeIn key={index} delay={index * 100}>
               <SpotlightCard className="group h-full flex flex-col">
-                <div className="relative flex-1 p-8 md:p-10 flex flex-col justify-between">
+                <div className="relative flex-1 p-4 md:p-10 flex flex-col justify-between">
                   {/* Hover Gradient Blob */}
                   <div
                     className={`absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2 transition-opacity duration-700 pointer-events-none`}
                   ></div>
 
                   <div className="relative z-10">
-                    <div className="flex justify-between items-start mb-10">
-                      <div className="p-3.5 bg-white rounded-2xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
-                        <Globe size={26} className={project.iconColor} />
+                    <div className="flex justify-between items-start mb-4 md:mb-10">
+                      <div className="p-2 md:p-3.5 bg-white rounded-xl md:rounded-2xl border border-slate-100 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)]">
+                        <Globe size={16} className={`md:w-[26px] md:h-[26px] ${project.iconColor}`} />
                       </div>
                       <a
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-3 bg-white hover:bg-slate-50 rounded-full transition-all border border-slate-100 hover:border-slate-300 shadow-sm group-hover:shadow-md"
+                        className="p-1.5 md:p-3 bg-white hover:bg-slate-50 rounded-full transition-all border border-slate-100 hover:border-slate-300 shadow-sm group-hover:shadow-md"
                       >
-                        <ExternalLink size={20} className="text-slate-400 hover:text-slate-900" />
+                        <ExternalLink size={14} className="md:w-5 md:h-5 text-slate-400 hover:text-slate-900" />
                       </a>
                     </div>
 
-                    <h3 className="text-3xl font-bold mb-4 text-slate-900 group-hover:text-indigo-600 transition-colors tracking-tight">
+                    <h3 className="text-base md:text-3xl font-bold mb-2 md:mb-4 text-slate-900 group-hover:text-indigo-600 transition-colors tracking-tight leading-tight">
                       {project.title}
                     </h3>
-                    <p className="text-slate-500 mb-8 leading-relaxed font-medium">{project.desc}</p>
-                  </div>
+                    <p className="text-xs md:text-lg text-slate-500 mb-4 md:mb-8 leading-relaxed line-clamp-3 md:line-clamp-none">
+                      {project.desc}
+                    </p>
 
-                  <div className="relative z-10 flex flex-wrap gap-2 mt-auto">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs font-bold tracking-wide px-3 py-1.5 bg-white/50 border border-slate-200 rounded-lg text-slate-600 uppercase font-mono"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                    <div className="flex flex-wrap gap-1.5 md:gap-2">
+                      {project.tags.map((tag, i) => (
+                        <span
+                          key={i}
+                          className="px-2 py-0.5 md:px-3 md:py-1 bg-slate-100 rounded-full text-[10px] md:text-sm font-medium text-slate-600 border border-slate-200"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </SpotlightCard>
