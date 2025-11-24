@@ -221,15 +221,15 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "A7 AI",
-      url: "https://a7-ai.vercel.app/",
-      desc: "Next-generation AI interface featuring fluid interactions, advanced LLM integration, and hyper-clean UI.",
+      title: "Aetherna",
+      url: "https://aetherna.agenv.tech/",
+      desc: "Aetherna , The New Era of Luxury , We don't just design clothes. We design memories",
       tags: ["AI", "Next.js", "Vercel"],
       color: "from-blue-50 to-indigo-50",
       iconColor: "text-indigo-600",
     },
     {
-      title: "AgEnv Tech",
+      title: "Agenv Tech",
       url: "https://www.agenv.tech",
       desc: "Revolutionizing agricultural environments with scalable AI-driven data visualization solutions.",
       tags: ["AgriTech", "Data Vis", "React"],
